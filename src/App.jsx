@@ -1,5 +1,11 @@
+import CreatePost from "./pages/CreatePost";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <CreatePost />
+    </>
+  );
 }
 
 export default App;
