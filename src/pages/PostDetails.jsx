@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
-import { getPostById, deletePost } from "../utils/api";
+import { getPostById, getAllPosts, updatePost, deletePost } from "../utils/api";
 import DetailView from "../components/DetailView.jsx";
 
 const PostDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
+  const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [backendOffline, setBackendOffline] = useState(false); // State for offline rendering
+  const [backendOffline, setBackendOffline] = useState(false);
 
   // Fetch post by ID
   useEffect(() => {
@@ -28,23 +29,37 @@ const PostDetails = () => {
     fetchPost();
   }, [id]);
 
-  // Delete post (deactivated if backend is offline)
+  // Fetch all posts for pagination
+  useEffect(() => {
+    const fetchAllPosts = async () => {
+      try {
+        const data = await getAllPosts();
+        setEntries(data);
+      } catch (err) {
+        console.error("⚠️ Failed to fetch all posts.");
+      }
+    };
+    fetchAllPosts();
+  }, []);
+
+  const handleUpdatePost = async (updatedPost) => {
+    try {
+      await updatePost(updatedPost.id, updatedPost);
+      setPost(updatedPost);
+    } catch (err) {
+      alert("Failed to update post.");
+    }
+  };
+
   const handleDelete = async () => {
     if (backendOffline) return;
     if (!window.confirm("Are you sure you want to delete this post?")) return;
-
     try {
       await deletePost(id);
       navigate("/home");
     } catch (err) {
       alert("Failed to delete post.");
     }
-  };
-
-  // Update button (deactivated if backend is offline)
-  const handleUpdate = () => {
-    if (backendOffline) return;
-    navigate(`/update/${id}`);
   };
 
   if (loading)
@@ -55,24 +70,15 @@ const PostDetails = () => {
     );
 
   return (
-    <div className="flex w-screen">
-      <DetailView
-        post={
-          backendOffline
-            ? {
-                title: "No Data",
-                content: "No content available.",
-                cover: "",
-                date: new Date(),
-              }
-            : post
-        }
-        onDelete={handleDelete}
-        onUpdate={handleUpdate}
-        backendOffline={backendOffline}
-        error={error}
-      />
-    </div>
+    <DetailView
+      post={backendOffline ? offlinePostTemplate : post}
+      onDelete={handleDelete}
+      backendOffline={backendOffline}
+      error={error}
+      handleUpdatePost={handleUpdatePost}
+      entries={entries}
+      setSelectedEntry={setPost}
+    />
   );
 };
 

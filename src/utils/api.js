@@ -22,6 +22,16 @@ export const getPostById = async (id) => {
   }
 };
 
+// READ - Fetch all posts
+export const getAllPosts = async () => {
+  try {
+    const response = await axios.get("http://localhost:3000/posts");
+    return response.data;
+  } catch (error) {
+    throw new Error("Failed to fetch all posts");
+  }
+};
+
 // UPDATE - Update a post
 export const updatePost = async (id, postData) => {
   try {
