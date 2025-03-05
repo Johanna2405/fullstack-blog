@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className="footer flex flex-col md:flex-row items-center justify-between bg-lightGreen p-10">
+    <footer className="footer flex flex-col md:flex-row items-center justify-between bg-darkGreen px-10 py-24">
       <nav>
         <img src="logo-03.svg" alt="Suitcase Stories" className="w-60" />
       </nav>
       <div className="flex gap-24">
         <nav className="flex flex-col gap-2">
-          <h6 className="font-Paytone text-lg text-lightBeige lowercase tracking-wider">
+          <h6 className="font-Snippet text-xl text-lightBeige uppercase tracking-wider">
             Company
           </h6>
           <a className="cursor-pointer text-lightBeige font-extralight tracking-wider uppercase hover:text-orange">
@@ -23,7 +23,7 @@ const Footer = () => {
           </a>
         </nav>
         <nav className="flex flex-col gap-2">
-          <h6 className="font-Paytone text-lg text-lightBeige lowercase tracking-wider">
+          <h6 className="font-Snippet text-xl text-lightBeige uppercase tracking-wider">
             Social
           </h6>
           <div className="grid grid-flow-col gap-4">

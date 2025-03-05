@@ -28,18 +28,23 @@ const Subscription = () => {
   };
 
   return (
-    <div className="flex flex-col container mx-auto items-center justify-center h-96 p-6 gap-6">
+    <div
+      className="flex flex-col container mx-auto items-center justify-center h-96 p-6 gap-6 "
+      id="subscribe"
+    >
       {/* Header */}
-      <div className="text-center">
-        <h2 className="text-4xl font-bold">Subscribe</h2>
-        <p className="pt-2 font-thin">
+      <div className="text-center ">
+        <h2 className="font-Snippet text-4xl text-lightBeige uppercase tracking-wider text-center">
+          Subscribe
+        </h2>
+        <p className="py-4 font-extralight tracking-wider uppercase text-lightBeige">
           Get our newsletter and get inspiration for your next dream journey.
         </p>
       </div>
 
       {/* Email Input Field */}
       <form className="flex gap-2 w-full max-w-md" onSubmit={handleSubscribe}>
-        <label className="input input-bordered flex items-center w-full">
+        <label className="input input-bordered border-lightBeige flex items-center w-full font-extralight tracking-wider rounded-2xl">
           <svg
             className="h-5 w-5 opacity-50 mr-2"
             xmlns="http://www.w3.org/2000/svg"
@@ -62,10 +67,13 @@ const Subscription = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full outline-none"
+            className="w-full outline-none "
           />
         </label>
-        <button type="submit" className="btn btn-outline btn-accent">
+        <button
+          type="submit"
+          className="px-4 py-2 rounded-2xl border border-lightBeige hover:border-orange hover:text-orange text-lg  text-lightBeige font-extralight uppercase tracking-widest"
+        >
           Subscribe
         </button>
       </form>

@@ -20,7 +20,7 @@ const Navbar = () => {
               <p>Stories</p>
             </Link>
           </li>
-          <li className="hover:text-orange">
+          <li className="hover:text-orange border border-darkGreen hover:border-orange px-4 py-2 rounded-2xl">
             <Link to={"/#subscribe"}>
               <p>Subscribe</p>
             </Link>
