@@ -1,9 +1,13 @@
-import MainSection from "../components/MainSection";
+import Hero from "../components/Hero";
+import Subscription from "../components/Subscription";
 
 const Home = () => {
   return (
     <div>
-      <MainSection />
+      <Hero />
+      <section>
+        <Subscription />
+      </section>
     </div>
   );
 };
