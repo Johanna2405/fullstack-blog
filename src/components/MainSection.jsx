@@ -22,8 +22,10 @@ const MainSection = () => {
   }, []);
 
   return (
-    <section className="container mx-auto py-10 px-5">
-      <h2 className="text-4xl font-bold text-center mb-8">Latest Articles</h2>
+    <section className="container mx-auto py-24 px-5" id="stories">
+      <h2 className="font-Snippet text-4xl text-lightBeige uppercase tracking-wider text-center mb-16">
+        Latest Articles
+      </h2>
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : posts.length > 0 ? (
