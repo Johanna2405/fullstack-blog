@@ -56,7 +56,7 @@ const PostDetails = () => {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
     try {
       await deletePost(id);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       alert("Failed to delete post.");
     }
