@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
-import { createPost } from "../utils/api"; // Importing the createPost function
+import { createPost } from "../utils/api";
 
 const CreatePost = () => {
   const [step, setStep] = useState(0);
@@ -13,6 +14,7 @@ const CreatePost = () => {
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const inputRef = useRef(null);
+  const navigate = useNavigate();
 
   const questions = [
     { key: "author", text: "What is your name?", type: "text" },
@@ -68,12 +70,10 @@ const CreatePost = () => {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      await createPost(formData); // Use the imported API function
+      await createPost(formData);
       alert("Post created successfully!");
 
-      // Reset form
-      setFormData({ author: "", title: "", content: "", cover: "" });
-      setStep(0);
+      navigate("/");
     } catch (error) {
       console.error("Error submitting post:", error);
       alert("Something went wrong. Please try again.");
@@ -82,7 +82,7 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 ">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
         {/* Progress Bar */}
         <div className="h-2 bg-gray-300 rounded-full overflow-hidden mb-4">
@@ -95,6 +95,7 @@ const CreatePost = () => {
         </div>
 
         {/* Progress Text */}
+
         <p className="text-gray-600 text-sm text-center mb-4">
           Step {step + 1} of {questions.length}
         </p>
@@ -107,7 +108,7 @@ const CreatePost = () => {
             exit={{ opacity: 0, x: 50 }}
             transition={{ duration: 0.3 }}
           >
-            <h2 className="text-xl font-semibold mb-4">
+            <h2 className="text-xl font-semibold mb-4 font-snippet">
               {questions[step].text}
             </h2>
             {questions[step].type === "textarea" ? (
@@ -118,7 +119,7 @@ const CreatePost = () => {
                 className={`w-full p-2 border ${
                   error ? "border-red-500" : "border-gray-300"
                 } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none overflow-hidden`}
-                rows="3"
+                rows="10"
               />
             ) : (
               <input
