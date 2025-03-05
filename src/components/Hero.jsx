@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <div className="flex flex-col min-h-3/4 bg-[#FEFDF8] pt-12 justify-center items-center">
-      <h1 className="font-Snippet text-5xl text-lightGreen uppercase tracking-wider text-center">
+      <h1 className="font-Snippet text-5xl text-lightGreen uppercase tracking-wider text-center px-10">
         Explore the lands beyond
       </h1>
       <img

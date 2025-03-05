@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="footer flex items-center justify-between bg-lightGreen p-10">
+    <footer className="footer flex flex-col md:flex-row items-center justify-between bg-lightGreen p-10">
       <nav>
         <img src="logo-03.svg" alt="Suitcase Stories" className="w-60" />
       </nav>
