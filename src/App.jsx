@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home.jsx";
 import PostDetails from "./pages/PostDetails.jsx";
+import CreatePost from "./pages/CreatePost.jsx";
 
 function App() {
   return (

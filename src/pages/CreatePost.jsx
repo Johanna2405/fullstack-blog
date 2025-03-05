@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { createPost } from "../utils/api";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [cover, setCover] = useState("");
   const [content, setContent] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -10,28 +13,27 @@ const CreatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title.trim() || !content.trim()) {
-      setError("Both fields are required!");
+    if (!title.trim() || !author.trim() || !cover.trim() || !content.trim()) {
+      setError("All fields are required!");
       return;
     }
 
     setError("");
     setLoading(true);
 
+    const newPost = {
+      title,
+      author,
+      cover,
+      content,
+      date: new Date().toISOString(),
+    };
+
     try {
-      const response = await fetch("https://your-api-url.com/posts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title, content }),
-      });
-
-      if (!response.ok) throw new Error("Failed to create post");
-
-      const data = await response.json();
-      console.log("Post created:", data);
+      await createPost(newPost);
       setTitle("");
+      setAuthor("");
+      setCover("");
       setContent("");
     } catch (error) {
       setError(error.message);
@@ -58,6 +60,20 @@ const CreatePost = () => {
           className="p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Author Name"
+          className="p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Cover Image URL"
+          className="p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
+          value={cover}
+          onChange={(e) => setCover(e.target.value)}
         />
         <textarea
           placeholder="Post Content"
