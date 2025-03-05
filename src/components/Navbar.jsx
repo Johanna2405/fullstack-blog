@@ -9,7 +9,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="flex-none ">
-        <ul className="flex gap-4 md:gap-8  items-center font-extralight text-xl text-darkGreen uppercase tracking-widest">
+        <ul className="flex gap-4 md:gap-8  items-center font-extralight text-xl text-darkGreen uppercase tracking-widest transition-all duration-300 ease-in-out transform">
           <li className="hover:text-orange">
             <NavLink to={"/"}>
               <p>Home</p>

@@ -72,7 +72,7 @@ const Subscription = () => {
         </label>
         <button
           type="submit"
-          className="px-4 py-2 rounded-2xl border border-lightBeige hover:border-orange hover:text-orange text-lg  text-lightBeige font-extralight uppercase tracking-widest"
+          className="px-4 py-2 rounded-2xl border border-lightBeige hover:border-orange hover:text-orange text-lg  text-lightBeige font-extralight uppercase tracking-widest transition-all duration-300 ease-in-out transform"
         >
           Subscribe
         </button>

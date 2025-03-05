@@ -10,7 +10,13 @@ const MainSection = () => {
       try {
         const response = await fetch("http://localhost:3000/posts");
         const data = await response.json();
-        setPosts(data);
+
+        // Sort posts from newest to oldest
+        const sortedPosts = data.sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+
+        setPosts(sortedPosts);
       } catch (error) {
         console.error("Error fetching posts:", error);
       } finally {

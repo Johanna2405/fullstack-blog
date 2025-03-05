@@ -7,7 +7,7 @@ const Hero = () => {
         Explore the lands beyond
       </h1>
       <Link to={"/posts/create"}>
-        <button className="px-4 py-2 rounded-2xl border border-darkGreen hover:border-orange hover:text-orange text-lg  text-darkGreen font-extralight uppercase tracking-widest">
+        <button className="px-4 py-2 rounded-2xl border border-darkGreen hover:border-orange hover:text-orange text-lg  text-darkGreen font-extralight uppercase tracking-widest transition-all duration-300 ease-in-out transform">
           create post
         </button>
       </Link>
