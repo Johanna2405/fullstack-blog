@@ -138,7 +138,7 @@ const CreatePost = () => {
                 autoFocus
               />
             )}
-            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+            {error && <p>{error}</p>}
           </motion.div>
         )}
 
