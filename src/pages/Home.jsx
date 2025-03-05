@@ -6,9 +6,10 @@ const Home = () => {
     <div>
       <Hero />
       <section>
-      <Subscription />
-    </section>
+        <Subscription />
+      </section>
     </div>
-}
+  );
+};
 
 export default Home;
