@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className="navbar flex-col md:flex-row bg-[#FEFDF8] px-8 py-4 sticky top-0">
       <div className="flex-1">
         <Link to={"/"}>
-          <img src="logo-01.svg" alt="Suitcase Stories" className="w-64" />
+          <img src="/logo-01.svg" alt="Suitcase Stories" className="w-64" />
         </Link>
       </div>
       <div className="flex-none ">

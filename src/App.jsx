@@ -6,7 +6,7 @@ import MainLayout from "./layouts/MainLayout.jsx";
 
 function App() {
   return (
-    <>
+    <div className="font-snippet">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
@@ -16,7 +16,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

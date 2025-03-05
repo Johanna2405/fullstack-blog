@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="footer flex flex-col md:flex-row items-center justify-between bg-darkGreen px-10 py-24">
       <nav>
-        <img src="logo-03.svg" alt="Suitcase Stories" className="w-60" />
+        <img src="/logo-03.svg" alt="Suitcase Stories" className="w-60" />
       </nav>
       <div className="flex gap-24">
         <nav className="flex flex-col gap-2">
