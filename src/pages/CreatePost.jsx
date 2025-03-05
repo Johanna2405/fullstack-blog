@@ -82,8 +82,8 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 ">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 bg-[linear-gradient(to_top,rgb(30,35,42),transparent),url('https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-no-repeat bg-top">
+      <div className="bg-lightGreen p-6 rounded-lg shadow-lg w-full max-w-md relative">
         {/* Progress Bar */}
         <div className="h-2 bg-gray-300 rounded-full overflow-hidden mb-4">
           <motion.div
@@ -97,7 +97,9 @@ const CreatePost = () => {
         {/* Progress Text */}
 
         <p className="text-gray-600 text-sm text-center mb-4">
-          Step {step + 1} of {questions.length}
+          <span className="font-snippet text-lightBeige">
+            Step {step + 1} of {questions.length}
+          </span>
         </p>
 
         {!isSubmitting && step < questions.length && (
@@ -108,8 +110,10 @@ const CreatePost = () => {
             exit={{ opacity: 0, x: 50 }}
             transition={{ duration: 0.3 }}
           >
-            <h2 className="text-xl font-semibold mb-4 font-snippet">
-              {questions[step].text}
+            <h2 className="text-xl font-semibold mb-4">
+              <span className="font-snippet text-lightBeige">
+                {questions[step].text}
+              </span>
             </h2>
             {questions[step].type === "textarea" ? (
               <textarea
@@ -134,7 +138,7 @@ const CreatePost = () => {
                 autoFocus
               />
             )}
-            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+            {error && <p>{error}</p>}
           </motion.div>
         )}
 
@@ -143,7 +147,7 @@ const CreatePost = () => {
           {step > 0 && !isSubmitting && (
             <button
               onClick={handleBack}
-              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md"
+              className="px-2 py-1 rounded-2xl border border-lightBeige hover:border-orange hover:text-orange text-lg  text-lightBeige font-extralight uppercase tracking-widest transition-all duration-300 ease-in-out transform"
             >
               Back
             </button>
@@ -151,7 +155,7 @@ const CreatePost = () => {
           {step < questions.length - 1 && !isSubmitting ? (
             <button
               onClick={handleNext}
-              className="px-4 py-2 bg-blue-500 text-white rounded-md"
+              className="px-2 py-1 rounded-2xl border border-lightBeige hover:border-orange hover:text-orange text-lg  text-lightBeige font-extralight uppercase tracking-widest transition-all duration-300 ease-in-out transform"
             >
               Next
             </button>
@@ -159,7 +163,7 @@ const CreatePost = () => {
             !isSubmitting && (
               <button
                 onClick={handleSubmit}
-                className="px-4 py-2 bg-green-500 text-white rounded-md"
+                className="px-2 py-1 rounded-2xl border border-lightBeige hover:border-orange hover:text-orange text-lg  text-lightBeige font-extralight uppercase tracking-widest transition-all duration-300 ease-in-out transform"
               >
                 Submit
               </button>
