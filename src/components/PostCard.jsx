@@ -16,7 +16,7 @@ const PostCard = ({ post }) => {
 
         {/* Text Content */}
         <div className="absolute bottom-5 left-5 text-white">
-          <h3 className="text-2xl font-semibold">{post.title}</h3>
+          <h3 className="text-2xl font-semibold font-Snippet">{post.title}</h3>
           <p className="text-sm uppercase opacity-90">{post.author}</p>
         </div>
       </div>
