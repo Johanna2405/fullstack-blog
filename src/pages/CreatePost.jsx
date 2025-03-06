@@ -17,18 +17,18 @@ const CreatePost = () => {
   const navigate = useNavigate();
 
   const questions = [
-    { key: "author", text: "What is your name?", type: "text" },
+    { key: "author", text: "WHAT IS YOUR NAME?", type: "text" },
     {
       key: "title",
-      text: "What would be the title of your blog?",
+      text: "WHAT WOULD BE THE TITLE OF YOUR BLOG?",
       type: "text",
     },
     {
       key: "content",
-      text: "Write the content of your blog.",
+      text: "WRITE THE CONTENT OF YOUR BLOG.",
       type: "textarea",
     },
-    { key: "cover", text: "Enter the cover image URL.", type: "text" },
+    { key: "cover", text: "ENTER THE COVER IMAGE URL.", type: "text" },
   ];
 
   useEffect(() => {
@@ -96,8 +96,8 @@ const CreatePost = () => {
 
         {/* Progress Text */}
 
-        <p className="text-gray-600 text-sm text-center mb-4">
-          <span className="font-snippet text-lightBeige">
+        <p className="text-gray-600 text-sm text-center mb-4 ">
+          <span className="font-Snippet text-lightBeige">
             Step {step + 1} of {questions.length}
           </span>
         </p>
@@ -110,8 +110,8 @@ const CreatePost = () => {
             exit={{ opacity: 0, x: 50 }}
             transition={{ duration: 0.3 }}
           >
-            <h2 className="text-xl font-semibold mb-4">
-              <span className="font-snippet text-lightBeige">
+            <h2 className="text-xl font-semibold mb-4 font-Snippet">
+              <span className="font-Snippet text-lightBeige">
                 {questions[step].text}
               </span>
             </h2>

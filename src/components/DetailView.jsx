@@ -61,11 +61,11 @@ const DetailView = ({
 
         {/* Header */}
         <div className="flex flex-col bg-darkGreen p-4 items-start rounded-lg">
-          <h1 className="text-3xl text-lightBeige pb-2 uppercase tracking-widest font-Paytone">
+          <h1 className="text-3xl text-lightBeige pb-2 uppercase tracking-widest font-Snippet">
             {post.title}
           </h1>
           {post.author ? (
-            <p className="text-lg text-lightBeige uppercase tracking-widest">
+            <p className="text-lg text-lightBeige uppercase tracking-widest font-Snippet">
               {post.author}
             </p>
           ) : (
@@ -93,7 +93,7 @@ const DetailView = ({
 
         {/* Content */}
         <div className="bg-darkGreen p-4 rounded-lg">
-          <p className="text-lightBeige text-lg font-thin min-h-36">
+          <p className="text-lightBeige text-lg font-thin min-h-36 font-Snippet">
             {post.content}
           </p>
         </div>

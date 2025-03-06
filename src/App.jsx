@@ -6,7 +6,7 @@ import MainLayout from "./layouts/MainLayout.jsx";
 
 function App() {
   return (
-    <div className="font-snippet">
+    <div className="font-Snippet">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
