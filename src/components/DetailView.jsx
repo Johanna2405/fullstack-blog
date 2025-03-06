@@ -148,12 +148,12 @@ const DetailView = ({
 
         {/* Edit Modal */}
         <dialog ref={modalRef} className="modal">
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">Edit Post</h3>
+          <div className="modal-box bg-lightGreen">
+            <h3 className="font-bold text-lg text-lightBeige">Edit Post</h3>
 
             {/* Title Input */}
             <div className="form-control mt-4">
-              <label className="label">Title</label>
+              <label className="label text-lightBeige">Title</label>
               <input
                 type="text"
                 className="input input-bordered"
@@ -164,7 +164,7 @@ const DetailView = ({
 
             {/* Author Input */}
             <div className="form-control mt-4">
-              <label className="label">Author</label>
+              <label className="label text-lightBeige">Author</label>
               <input
                 type="text"
                 className="input input-bordered"
@@ -175,7 +175,7 @@ const DetailView = ({
 
             {/* Cover URL Input */}
             <div className="form-control mt-4">
-              <label className="label">Cover Image URL</label>
+              <label className="label text-lightBeige">Cover Image URL</label>
               <input
                 type="text"
                 className="input input-bordered"
@@ -186,7 +186,7 @@ const DetailView = ({
 
             {/* Content Input */}
             <div className="form-control mt-4">
-              <label className="label">Content</label>
+              <label className="label text-lightBeige">Content</label>
               <textarea
                 className="textarea textarea-bordered h-32"
                 value={editedContent}
@@ -196,11 +196,14 @@ const DetailView = ({
 
             {/* Modal Actions */}
             <div className="modal-action">
-              <button className="btn btn-accent" onClick={handleSaveChanges}>
+              <button
+                className="px-2 py-1 rounded-2xl border border-lightBeige hover:border-orange hover:text-orange text-lg text-lightBeige font-extralight uppercase tracking-widest transition-all duration-300 ease-in-out transform"
+                onClick={handleSaveChanges}
+              >
                 Save Changes
               </button>
               <button
-                className="btn btn-outline"
+                className="px-2 py-1 rounded-2xl border border-lightBeige hover:border-orange hover:text-orange text-lg text-lightBeige font-extralight uppercase tracking-widest transition-all duration-300 ease-in-out transform"
                 onClick={() => modalRef.current.close()}
               >
                 Cancel
