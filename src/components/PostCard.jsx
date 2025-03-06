@@ -11,8 +11,11 @@ const PostCard = ({ post }) => {
           className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
         />
 
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-60 transition-all duration-300" />
+        {/* Darker Overlay with Explicit RGBA */}
+        <div
+          className="absolute inset-0 bg-black transition-all duration-300"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        />
 
         {/* Text Content */}
         <div className="absolute bottom-5 left-5 text-white">
