@@ -31,6 +31,7 @@ const PostDetails = () => {
 
   // Fetch all posts for pagination
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchAllPosts = async () => {
       try {
         const data = await getAllPosts();
