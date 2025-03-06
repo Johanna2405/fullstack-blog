@@ -16,14 +16,14 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="hover:text-orange">
-            <Link to={"/#stories"}>
+            <a href="#stories">
               <p>Stories</p>
-            </Link>
+            </a>
           </li>
           <li className="hover:text-orange border border-darkGreen hover:border-orange px-4 py-2 rounded-2xl">
-            <Link to={"/#subscribe"}>
+            <a href="#subscribe">
               <p>Subscribe</p>
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
